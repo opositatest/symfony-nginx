@@ -1,0 +1,13 @@
+version: '2'
+services:
+  opos:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - APP_ENVIRONMENT=STAGE
+        - APP_ENV=dev
+        - APP_DEBUG=1
+        - HTTPS_FORCE=off
+        - TIMEZONE="Europe/Madrid"
+    image: nginx/symfony-nginx:latest
