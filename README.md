@@ -15,9 +15,9 @@ Services:
 Fetures:
 ---
 
-* This image run php-fpm and in the same container with unix socket.
-* This image uses the same entrypoint for all symfony environments. Build one time and run in multiple environments. 
-  You should implment a similar web/index.php in your proyect:
+* This image run php-fpm with Nginx in the same container with unix socket.
+* This image uses the same entrypoint for all symfony environments. Build it one time and run in multiple environments. 
+  You should implement a similar web/index.php in your proyect:
 
 ```
 ....
@@ -43,7 +43,7 @@ $APP_DEBUG
 $HTTPS_FORCE
     on and off
     
-    If value is on, proxy pass to backend https protocol to return pages and assets with https protocol
+    If value is on, proxy pass https protocol to backend so it will return pages and assets with https protocol
 
 $TIMEZONE
 

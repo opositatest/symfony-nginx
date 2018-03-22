@@ -1,6 +1,6 @@
 version: '2'
 services:
-  opos:
+  symfony_nginx:
     build:
       context: .
       dockerfile: ./Dockerfile
