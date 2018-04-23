@@ -95,8 +95,7 @@ RUN apt-get update -q && \
     rm -rf /usr/local/nginx/conf/nginx.conf && \
     cp /config/docker/nginx/nginx.tmpl /usr/local/nginx/nginx.tmpl && \
     mkdir -p /usr/local/nginx/conf.d/ && \
-    mv /config/docker/nginx/pagespeed.conf /usr/local/nginx/ && \
-    mv /config/docker/nginx/redirects.conf /usr/local/nginx/ && \
+    mv /config/docker/nginx/*.conf /usr/local/nginx/ && \
 
     #pagespeed cache
     mkdir -p /var/ngx_pagespeed_cache && \

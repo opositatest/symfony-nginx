@@ -4,7 +4,7 @@ worker_processes 5;
 pid /run/nginx.pid;
 
 
-error_log /dev/stdout info;
+error_log /dev/stdout warn;
 
 events {
     worker_connections 2048;
@@ -12,7 +12,7 @@ events {
 }
 
 http {
-    access_log /dev/stdout;
+    access_log off;
 
     proxy_buffer_size   128k;
     proxy_buffers   4 256k;
@@ -51,6 +51,8 @@ http {
     server {
         listen 80;
         server_name _;
+
+        include  /usr/local/nginx/https_force.conf;
 
         root /app/web;
         index index.php;
