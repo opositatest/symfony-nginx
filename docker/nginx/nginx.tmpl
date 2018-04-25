@@ -66,12 +66,6 @@ http {
             return 403;
         }
 
-        location ~* \.(jpg|jpeg|gif|png|css|js|ico|xml)$ {
-            access_log        off;
-            log_not_found     off;
-            expires           360d;
-        }
-
         location / {
             try_files $uri /index.php$is_args$args;
         }
