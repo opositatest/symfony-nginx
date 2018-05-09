@@ -105,7 +105,11 @@ RUN apt-get update -q && \
     mv /config/docker/nginx/supervisord.conf /etc/supervisor/conf.d/ && \
 
     #Remove configuration files
-    rm -rf /config/docker 
+    rm -rf /config/docker && \
+
+    #php environment variables
+    envsubst '\$TIMEZONE' < /etc/php/7.1/php-${APP_ENV}.tmpl > /etc/php/7.1/cli/conf.d/50-setting.ini && \
+    envsubst '\$TIMEZONE' < /etc/php/7.1/php-${APP_ENV}.tmpl > /etc/php/7.1/fpm/conf.d/50-setting.ini
 
 EXPOSE 80
 

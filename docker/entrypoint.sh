@@ -3,10 +3,6 @@
 #Ningx environment variables
 envsubst '\$APP_ENV \$APP_DEBUG \$HTTPS_FORCE' < /usr/local/nginx/nginx.tmpl > /usr/local/nginx/conf/nginx.conf
 
-#php environment variables
-envsubst '\$TIMEZONE' < /etc/php/7.1/php-${APP_ENV}.tmpl > /etc/php/7.1/cli/conf.d/50-setting.ini
-envsubst '\$TIMEZONE' < /etc/php/7.1/php-${APP_ENV}.tmpl > /etc/php/7.1/fpm/conf.d/50-setting.ini
-
 #enable https redicection and pagespeed in prod mode
 if [[ "$HTTPS_FORCE" = "off" ]]; then
     cat "" > /usr/local/nginx/https_force.conf
