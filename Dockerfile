@@ -107,6 +107,10 @@ RUN apt-get update -q && \
     #Remove configuration files
     rm -rf /config/docker && \
 
+    #Add php-fpm entrypoint to remove logs warning
+    cp docker/php/fpm-entrypoint.sh /fpm-entrypoint.sh  && \
+    chmod +x /fpm-entrypoint.sh && \
+
     #php environment variables
     envsubst '\$TIMEZONE' < /etc/php/7.1/php-${APP_ENV}.tmpl > /etc/php/7.1/cli/conf.d/50-setting.ini && \
     envsubst '\$TIMEZONE' < /etc/php/7.1/php-${APP_ENV}.tmpl > /etc/php/7.1/fpm/conf.d/50-setting.ini
