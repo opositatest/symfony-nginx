@@ -112,8 +112,8 @@ RUN apt-get update -q && \
     rm -rf /config/docker && \
 
     #php environment variables
-    envsubst '\$TIMEZONE' < /etc/php/7.1/php-${APP_ENV}.tmpl > /etc/php/7.1/cli/conf.d/50-setting.ini && \
-    envsubst '\$TIMEZONE' < /etc/php/7.1/php-${APP_ENV}.tmpl > /etc/php/7.1/fpm/conf.d/50-setting.ini
+    envsubst '\$TIMEZONE' < /etc/php/7.1/php-dev.tmpl > /etc/php/7.1/php-dev.ini && \
+    envsubst '\$TIMEZONE' < /etc/php/7.1/php-prod.tmpl > /etc/php/7.1/php-prod.ini
 
 EXPOSE 80
 
