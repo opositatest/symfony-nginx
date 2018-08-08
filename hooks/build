@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t opositatest/symfony-nginx:$SOURCE_BRANCH --build-arg APP_ENV=dev --build-arg APP_DEBUG=1 --build-arg HTTPS_FORCE=off --build-arg TIMEZONE="Europe/Madrid" .
+docker build -t opositatest/symfony-nginx:$SOURCE_BRANCH --build-arg APP_ENV=prod --build-arg APP_DEBUG=0 --build-arg HTTPS_FORCE=on --build-arg TIMEZONE="Europe/Madrid" .
