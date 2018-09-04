@@ -70,7 +70,7 @@ RUN apt-get update -q && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
 
     #Pagespeed Install
-    curl -f -L -sS https://raw.githubusercontent.com/apache/incubator-pagespeed-ngx/v1.13.35.2-stable/scripts/build_ngx_pagespeed.sh > pagespeed.sh && \
+    curl -f -L -sS https://raw.githubusercontent.com/apache/incubator-pagespeed-ngx/master/scripts/build_ngx_pagespeed.sh > pagespeed.sh && \
     chmod +x pagespeed.sh && \
     #Remove sudo command for pagespeed script, we have running this script like root, whe dont
     #need use sudo. Sudo in docker container have secury issues.
