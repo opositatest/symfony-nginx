@@ -66,13 +66,6 @@ http {
             return 403;
         }
 
-        #
-        # Browser Caching config
-        #
-        location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {
-                    expires 365d;
-        }
-
         location / {
             try_files $uri /index.php$is_args$args;
         }
